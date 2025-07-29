@@ -1,63 +1,78 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to Bad Belzig</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> <!-- For icons -->
     <style>
         body {
             font-family: 'Inter', sans-serif;
+            --main-color: #faa307; /* Orange/Gold accent from your GitHub */
+            --dark-bg: #111827; /* Dark Gray */
+            --dark-card: #1f2937; /* Lighter Dark Gray */
         }
         .hero-section {
-            background-image: url('https://placehold.co/1600x900/A0AEC0/FFFFFF?text=View+of+Bad+Belzig');
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://raw.githubusercontent.com/Mikieb1982/BadBelzig/cafe49a32df5670286651e9d08e92bb46ecd21e6/assests/BadBelzig-1.jpg');
             background-size: cover;
             background-position: center;
         }
         .section-title {
-            @apply text-3xl font-bold text-gray-800 mb-8 text-center;
+            @apply text-3xl font-bold text-white mb-8 text-center;
+        }
+        .accent-color {
+            color: var(--main-color);
+        }
+        .bg-accent-color {
+            background-color: var(--main-color);
+        }
+        .btn {
+            @apply bg-accent-color text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition duration-300 inline-block;
+        }
+        .card-image {
+            @apply h-48 w-full object-cover rounded-t-lg;
         }
     </style>
 </head>
-<body class="bg-gray-50">
+<body class="bg-gray-900">
 
     <!-- Header -->
-    <header class="bg-white shadow-md sticky top-0 z-50">
+    <header id="header" class="bg-gray-900 bg-opacity-80 backdrop-blur-md shadow-lg sticky top-0 z-50 transition-all duration-300">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="text-2xl font-bold text-gray-800">
-                <a href="#">Bad Belzig</a>
+            <div class="text-2xl font-bold text-white">
+                <a href="#">Bad <span class="accent-color">Belzig</span></a>
             </div>
             <div class="hidden md:flex space-x-8">
-                <a href="#about" class="text-gray-600 hover:text-blue-600 transition duration-300">About</a>
-                <a href="#tourism" class="text-gray-600 hover:text-blue-600 transition duration-300">Explore</a>
-                <a href="#hiking" class="text-gray-600 hover:text-blue-600 transition duration-300">Hiking</a>
-                <a href="#accommodations" class="text-gray-600 hover:text-blue-600 transition duration-300">Stay</a>
-                <a href="#business" class="text-gray-600 hover:text-blue-600 transition duration-300">Business</a>
-                <a href="#contact" class="text-gray-600 hover:text-blue-600 transition duration-300">Contact</a>
+                <a href="#about" class="text-gray-300 hover:accent-color transition duration-300">About</a>
+                <a href="#tourism" class="text-gray-300 hover:accent-color transition duration-300">Explore</a>
+                <a href="#hiking" class="text-gray-300 hover:accent-color transition duration-300">Hiking</a>
+                <a href="#accommodations" class="text-gray-300 hover:accent-color transition duration-300">Stay</a>
+                <a href="#contact" class="text-gray-300 hover:accent-color transition duration-300">Contact</a>
             </div>
             <div class="md:hidden">
-                <button id="mobile-menu-button" class="text-gray-800 focus:outline-none">
+                <button id="mobile-menu-button" class="text-white focus:outline-none">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
                 </button>
             </div>
         </nav>
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden">
-            <a href="#about" class="block py-2 px-4 text-sm text-gray-700 hover:bg-blue-500 hover:text-white">About</a>
-            <a href="#tourism" class="block py-2 px-4 text-sm text-gray-700 hover:bg-blue-500 hover:text-white">Explore</a>
-            <a href="#hiking" class="block py-2 px-4 text-sm text-gray-700 hover:bg-blue-500 hover:text-white">Hiking</a>
-            <a href="#accommodations" class="block py-2 px-4 text-sm text-gray-700 hover:bg-blue-500 hover:text-white">Stay</a>
-            <a href="#business" class="block py-2 px-4 text-sm text-gray-700 hover:bg-blue-500 hover:text-white">Business</a>
-            <a href="#contact" class="block py-2 px-4 text-sm text-gray-700 hover:bg-blue-500 hover:text-white">Contact</a>
+            <a href="#about" class="block py-2 px-4 text-sm text-gray-300 hover:bg-accent-color hover:text-white">About</a>
+            <a href="#tourism" class="block py-2 px-4 text-sm text-gray-300 hover:bg-accent-color hover:text-white">Explore</a>
+            <a href="#hiking" class="block py-2 px-4 text-sm text-gray-300 hover:bg-accent-color hover:text-white">Hiking</a>
+            <a href="#accommodations" class="block py-2 px-4 text-sm text-gray-300 hover:bg-accent-color hover:text-white">Stay</a>
+            <a href="#contact" class="block py-2 px-4 text-sm text-gray-300 hover:bg-accent-color hover:text-white">Contact</a>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero-section text-white h-[60vh] flex items-center justify-center">
-        <div class="text-center bg-black bg-opacity-50 p-8 rounded-lg">
-            <h1 class="text-5xl font-bold mb-4">Discover Bad Belzig</h1>
-            <p class="text-xl">The historic spa town in the heart of the High Fläming Nature Park.</p>
+    <section class="hero-section text-white h-screen flex items-center justify-center">
+        <div class="text-center">
+            <h1 class="text-5xl md:text-7xl font-bold mb-4">Experience <span class="accent-color">Bad Belzig</span></h1>
+            <p class="text-xl text-gray-200 mb-8">Your historic spa town in the High Fläming.</p>
+            <a href="#about" class="btn">Discover More</a>
         </div>
     </section>
 
@@ -65,146 +80,128 @@
     <main class="container mx-auto px-6 py-12">
 
         <!-- About Section -->
-        <section id="about" class="py-12">
-            <h2 class="section-title">Your Spa Town in the Fläming</h2>
+        <section id="about" class="py-16">
+            <h2 class="section-title">A Town of <span class="accent-color">History</span> & <span class="accent-color">Nature</span></h2>
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <div>
-                    <img src="https://placehold.co/600x400/CBD5E0/FFFFFF?text=Eisenhardt+Castle" class="rounded-lg shadow-lg" alt="Eisenhardt Castle" onerror="this.onerror=null;this.src='https://placehold.co/600x400/CBD5E0/FFFFFF?text=Image+Not+Found';">
+                    <img src="https://raw.githubusercontent.com/Mikieb1982/BadBelzig/cafe49a32df5670286651e9d08e92bb46ecd21e6/assests/BadBelzig-2.jpg" class="rounded-lg shadow-lg" alt="Eisenhardt Castle" onerror="this.onerror=null;this.src='https://placehold.co/600x400/1f2937/faa307?text=Image+Not+Found';">
                 </div>
-                <div>
-                    <p class="text-gray-700 leading-relaxed mb-4">
-                        Welcome to Bad Belzig, a state-approved spa town with a history stretching back over a thousand years. Nestled in the scenic High Fläming Nature Park, our town offers a unique blend of historical charm and natural beauty.
+                <div class="text-gray-300">
+                    <p class="leading-relaxed mb-4">
+                        Welcome to Bad Belzig, a state-approved spa town nestled in the scenic High Fläming Nature Park. Our town offers a unique blend of historical charm, natural beauty, and modern relaxation.
                     </p>
-                    <p class="text-gray-700 leading-relaxed">
-                        From the mighty Eisenhardt Castle to the soothing thermal baths of the SteinTherme, Bad Belzig is a place of relaxation and discovery. Explore our picturesque old town with its historic market square, St. Mary's Church, and charming alleys.
+                    <p class="leading-relaxed">
+                        From the mighty Eisenhardt Castle to the soothing thermal baths of the SteinTherme, Bad Belzig is a place of discovery. Explore our picturesque old town with its historic market square and charming alleys.
                     </p>
                 </div>
             </div>
         </section>
 
         <!-- Tourism Section -->
-        <section id="tourism" class="py-12 bg-white rounded-lg shadow-xl p-8">
-            <h2 class="section-title">Experience & Explore</h2>
-            <div class="grid md:grid-cols-3 gap-8 text-center">
+        <section id="tourism" class="py-16 bg-gray-800 rounded-lg shadow-xl p-8">
+            <h2 class="section-title">Experience & <span class="accent-color">Explore</span></h2>
+            <div class="grid md:grid-cols-3 gap-8">
                 <!-- Card 1: SteinTherme -->
-                <div class="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-2xl transition-shadow duration-300">
-                    <img src="https://placehold.co/400x300/BEE3F8/FFFFFF?text=SteinTherme+Spa" class="rounded-lg mb-4 mx-auto" alt="SteinTherme Spa" onerror="this.onerror=null;this.src='https://placehold.co/400x300/BEE3F8/FFFFFF?text=Image+Not+Found';">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">SteinTherme Thermal Bath</h3>
-                    <p class="text-gray-600">Relax and rejuvenate in our famous saltwater thermal spa. Enjoy various pools, saunas, and wellness treatments.</p>
+                <div class="bg-gray-900 rounded-lg shadow-md hover:transform hover:-translate-y-2 transition-transform duration-300 overflow-hidden">
+                    <img src="https://raw.githubusercontent.com/Mikieb1982/BadBelzig/cafe49a32df5670286651e9d08e92bb46ecd21e6/assests/BadBelzig-5.jpg" alt="SteinTherme Spa" class="card-image" onerror="this.onerror=null;this.src='https://placehold.co/400x300/1f2937/faa307?text=Image+Not+Found';">
+                    <div class="p-6 text-center">
+                        <h3 class="text-xl font-semibold accent-color mb-2">SteinTherme Thermal Bath</h3>
+                        <p class="text-gray-400">Relax and rejuvenate in our famous saltwater thermal spa.</p>
+                    </div>
                 </div>
                 <!-- Card 2: High Fläming Nature Park -->
-                <div class="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-2xl transition-shadow duration-300">
-                    <img src="https://placehold.co/400x300/9AE6B4/FFFFFF?text=Fläming+Nature+Park" class="rounded-lg mb-4 mx-auto" alt="High Fläming Nature Park" onerror="this.onerror=null;this.src='https://placehold.co/400x300/9AE6B4/FFFFFF?text=Image+Not+Found';">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">High Fläming Nature Park</h3>
-                    <p class="text-gray-600">Hike or cycle through pristine forests, rolling hills, and idyllic landscapes. Discover the region's unique flora and fauna.</p>
+                <div class="bg-gray-900 rounded-lg shadow-md hover:transform hover:-translate-y-2 transition-transform duration-300 overflow-hidden">
+                    <img src="https://raw.githubusercontent.com/Mikieb1982/BadBelzig/cafe49a32df5670286651e9d08e92bb46ecd21e6/assests/BadBelzig-8.jpg" alt="High Fläming Nature Park" class="card-image" onerror="this.onerror=null;this.src='https://placehold.co/400x300/1f2937/faa307?text=Image+Not+Found';">
+                    <div class="p-6 text-center">
+                        <h3 class="text-xl font-semibold accent-color mb-2">High Fläming Nature Park</h3>
+                        <p class="text-gray-400">Hike or cycle through pristine forests and rolling hills.</p>
+                    </div>
                 </div>
                 <!-- Card 3: Culture & History -->
-                <div class="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-2xl transition-shadow duration-300">
-                    <img src="https://placehold.co/400x300/FED7D7/FFFFFF?text=Historic+Old+Town" class="rounded-lg mb-4 mx-auto" alt="Historic Old Town" onerror="this.onerror=null;this.src='https://placehold.co/400x300/FED7D7/FFFFFF?text=Image+Not+Found';">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Culture & History</h3>
-                    <p class="text-gray-600">Explore Eisenhardt Castle, visit local museums, and walk through the medieval town center to experience our rich heritage.</p>
+                <div class="bg-gray-900 rounded-lg shadow-md hover:transform hover:-translate-y-2 transition-transform duration-300 overflow-hidden">
+                    <img src="https://raw.githubusercontent.com/Mikieb1982/BadBelzig/cafe49a32df5670286651e9d08e92bb46ecd21e6/assests/BadBelzig-3.jpg" alt="Historic Old Town" class="card-image" onerror="this.onerror=null;this.src='https://placehold.co/400x300/1f2937/faa307?text=Image+Not+Found';">
+                    <div class="p-6 text-center">
+                        <h3 class="text-xl font-semibold accent-color mb-2">Culture & History</h3>
+                        <p class="text-gray-400">Explore Eisenhardt Castle and our rich medieval heritage.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- Hiking Section -->
-        <section id="hiking" class="py-12">
-            <h2 class="section-title">Hiking & Nature</h2>
-            <p class="text-center text-gray-700 leading-relaxed max-w-3xl mx-auto mb-10">
-                The High Fläming is a paradise for hikers. Discover well-marked trails that lead you through stunning natural landscapes, past historical sites, and to breathtaking viewpoints.
-            </p>
-            <div class="grid md:grid-cols-3 gap-8 text-center">
-                <!-- Card 1: Art Trail -->
-                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                    <img src="https://placehold.co/400x300/A9D5A5/FFFFFF?text=Art+Trail" class="rounded-lg mb-4 mx-auto" alt="Art Trail" onerror="this.onerror=null;this.src='https://placehold.co/400x300/A9D5A5/FFFFFF?text=Image+Not+Found';">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Art Trail (Kunstwanderweg)</h3>
-                    <p class="text-gray-600">A unique trail combining nature with art installations. This circular route offers surprising and thought-provoking sculptures along the way.</p>
+        <section id="hiking" class="py-16">
+            <h2 class="section-title">A Paradise for <span class="accent-color">Hikers</span></h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                 <!-- Card 1: Art Trail -->
+                <div class="bg-gray-800 rounded-lg shadow-lg hover:shadow-yellow-500/20 transition-shadow duration-300 overflow-hidden">
+                    <img src="https://raw.githubusercontent.com/Mikieb1982/BadBelzig/cafe49a32df5670286651e9d08e92bb46ecd21e6/assests/BadBelzig-9.jpg" alt="Art Trail" class="card-image" onerror="this.onerror=null;this.src='https://placehold.co/400x300/1f2937/faa307?text=Image+Not+Found';">
+                    <div class="p-6 text-center">
+                        <h3 class="text-xl font-semibold accent-color mb-2">Art Trail (Kunstwanderweg)</h3>
+                        <p class="text-gray-400">A unique trail combining nature with fascinating art installations.</p>
+                    </div>
                 </div>
                 <!-- Card 2: Castle Trail -->
-                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                    <img src="https://placehold.co/400x300/FBD38D/FFFFFF?text=Castle+Trail" class="rounded-lg mb-4 mx-auto" alt="Castle Trail" onerror="this.onerror=null;this.src='https://placehold.co/400x300/FBD38D/FFFFFF?text=Image+Not+Found';">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Panther Trail (Panther-Rundweg)</h3>
-                    <p class="text-gray-600">This trail takes you around the historic town center, offering fantastic views of Eisenhardt Castle and the surrounding landscape.</p>
+                <div class="bg-gray-800 rounded-lg shadow-lg hover:shadow-yellow-500/20 transition-shadow duration-300 overflow-hidden">
+                    <img src="https://raw.githubusercontent.com/Mikieb1982/BadBelzig/cafe49a32df5670286651e9d08e92bb46ecd21e6/assests/BadBelzig-10.jpg" alt="Panther Trail" class="card-image" onerror="this.onerror=null;this.src='https://placehold.co/400x300/1f2937/faa307?text=Image+Not+Found';">
+                    <div class="p-6 text-center">
+                        <h3 class="text-xl font-semibold accent-color mb-2">Panther Trail (Panther-Rundweg)</h3>
+                        <p class="text-gray-400">Offers fantastic views of Eisenhardt Castle and the town.</p>
+                    </div>
                 </div>
-                <!-- Card 3: International Art Trail -->
-                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                    <img src="https://placehold.co/400x300/BDBDBD/FFFFFF?text=International+Art+Trail" class="rounded-lg mb-4 mx-auto" alt="International Art Trail" onerror="this.onerror=null;this.src='https://placehold.co/400x300/BDBDBD/FFFFFF?text=Image+Not+Found';">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">European Long-Distance Path E11</h3>
-                    <p class="text-gray-600">Part of a larger European network, this trail passes through the Fläming, connecting diverse landscapes and cultural highlights.</p>
+                <!-- Card 3: E11 Path -->
+                <div class="bg-gray-800 rounded-lg shadow-lg hover:shadow-yellow-500/20 transition-shadow duration-300 overflow-hidden">
+                    <img src="https://raw.githubusercontent.com/Mikieb1982/BadBelzig/cafe49a32df5670286651e9d08e92bb46ecd21e6/assests/BadBelzig-11.jpg" alt="European Path E11" class="card-image" onerror="this.onerror=null;this.src='https://placehold.co/400x300/1f2937/faa307?text=Image+Not+Found';">
+                    <div class="p-6 text-center">
+                        <h3 class="text-xl font-semibold accent-color mb-2">European Path E11</h3>
+                        <p class="text-gray-400">Connects diverse landscapes and cultural highlights.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- Accommodations Section -->
-        <section id="accommodations" class="py-12 bg-white rounded-lg shadow-xl p-8">
-            <h2 class="section-title">Where to Stay</h2>
-            <p class="text-center text-gray-700 leading-relaxed max-w-3xl mx-auto mb-10">
-                Find the perfect place to rest after a day of exploration. Bad Belzig offers a wide range of accommodations to suit every taste and budget, from comfortable hotels to cozy holiday homes.
-            </p>
+        <section id="accommodations" class="py-16 bg-gray-800 rounded-lg shadow-xl p-8">
+            <h2 class="section-title">Where to <span class="accent-color">Stay</span></h2>
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Card 1: Hotels -->
-                <div class="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-2xl transition-shadow duration-300 flex flex-col">
-                    <img src="https://placehold.co/400x300/E9D8FD/FFFFFF?text=Hotels" class="rounded-lg mb-4 mx-auto" alt="Hotels in Bad Belzig" onerror="this.onerror=null;this.src='https://placehold.co/400x300/E9D8FD/FFFFFF?text=Image+Not+Found';">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Hotels & Guesthouses</h3>
-                    <p class="text-gray-600 flex-grow">Enjoy full-service comfort and hospitality at our local hotels and guesthouses.</p>
-                    <a href="#" class="mt-4 text-blue-600 font-semibold hover:text-blue-800">View Options &rarr;</a>
-                </div>
-                <!-- Card 2: Holiday Apartments -->
-                <div class="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-2xl transition-shadow duration-300 flex flex-col">
-                    <img src="https://placehold.co/400x300/B2F5EA/FFFFFF?text=Apartments" class="rounded-lg mb-4 mx-auto" alt="Holiday Apartments" onerror="this.onerror=null;this.src='https://placehold.co/400x300/B2F5EA/FFFFFF?text=Image+Not+Found';">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Holiday Apartments</h3>
-                    <p class="text-gray-600 flex-grow">Perfect for families or longer stays, offering the flexibility and privacy of a home.</p>
-                    <a href="#" class="mt-4 text-blue-600 font-semibold hover:text-blue-800">Find Apartments &rarr;</a>
-                </div>
-                <!-- Card 3: Holiday Homes -->
-                <div class="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-2xl transition-shadow duration-300 flex flex-col">
-                    <img src="https://placehold.co/400x300/FEEBC8/FFFFFF?text=Holiday+Homes" class="rounded-lg mb-4 mx-auto" alt="Holiday Homes" onerror="this.onerror=null;this.src='https://placehold.co/400x300/FEEBC8/FFFFFF?text=Image+Not+Found';">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Holiday Homes</h3>
-                    <p class="text-gray-600 flex-grow">Rent an entire house for maximum space and comfort during your vacation in the Fläming.</p>
-                    <a href="#" class="mt-4 text-blue-600 font-semibold hover:text-blue-800">Browse Homes &rarr;</a>
-                </div>
-                <!-- Card 4: Private Rooms -->
-                <div class="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-2xl transition-shadow duration-300 flex flex-col">
-                    <img src="https://placehold.co/400x300/C3DAFE/FFFFFF?text=Private+Rooms" class="rounded-lg mb-4 mx-auto" alt="Private Rooms" onerror="this.onerror=null;this.src='https://placehold.co/400x300/C3DAFE/FFFFFF?text=Image+Not+Found';">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Private Rooms</h3>
-                    <p class="text-gray-600 flex-grow">An affordable and personal option for solo travelers or couples looking to connect with locals.</p>
-                    <a href="#" class="mt-4 text-blue-600 font-semibold hover:text-blue-800">See Rooms &rarr;</a>
-                </div>
+                <!-- Accommodation Cards -->
+                <div class="bg-gray-900 rounded-lg shadow-md overflow-hidden"><img src="https://raw.githubusercontent.com/Mikieb1982/BadBelzig/cafe49a32df5670286651e9d08e92bb46ecd21e6/assests/BadBelzig-12.jpg" alt="Hotel" class="card-image"><div class="p-4 text-center"><h3 class="text-xl font-semibold accent-color">Hotels</h3></div></div>
+                <div class="bg-gray-900 rounded-lg shadow-md overflow-hidden"><img src="https://raw.githubusercontent.com/Mikieb1982/BadBelzig/cafe49a32df5670286651e9d08e92bb46ecd21e6/assests/BadBelzig-13.jpg" alt="Apartment" class="card-image"><div class="p-4 text-center"><h3 class="text-xl font-semibold accent-color">Apartments</h3></div></div>
+                <div class="bg-gray-900 rounded-lg shadow-md overflow-hidden"><img src="https://raw.githubusercontent.com/Mikieb1982/BadBelzig/cafe49a32df5670286651e9d08e92bb46ecd21e6/assests/BadBelzig-14.jpg" alt="Holiday Home" class="card-image"><div class="p-4 text-center"><h3 class="text-xl font-semibold accent-color">Holiday Homes</h3></div></div>
+                <div class="bg-gray-900 rounded-lg shadow-md overflow-hidden"><img src="https://raw.githubusercontent.com/Mikieb1982/BadBelzig/cafe49a32df5670286651e9d08e92bb46ecd21e6/assests/BadBelzig-15.jpg" alt="Private Room" class="card-image"><div class="p-4 text-center"><h3 class="text-xl font-semibold accent-color">Private Rooms</h3></div></div>
             </div>
         </section>
-
-        <!-- Business Section -->
-        <section id="business" class="py-12">
-            <h2 class="section-title">Business & Community</h2>
-            <div class="max-w-4xl mx-auto text-center">
-                <p class="text-gray-700 leading-relaxed mb-6">
-                    Bad Belzig is not only a tourist destination but also a thriving community and a great place for business. With a strategic location near Berlin and Potsdam, we offer an attractive environment for entrepreneurs and companies. Our town administration is committed to supporting local businesses and fostering economic growth.
-                </p>
-                <a href="#" class="bg-blue-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-700 transition duration-300">Learn More About Local Economy</a>
-            </div>
-        </section>
-
+        
         <!-- Contact Section -->
-        <section id="contact" class="py-12 bg-gray-200 rounded-lg">
-            <h2 class="section-title">Get in Touch</h2>
-            <div class="max-w-lg mx-auto text-center">
-                <p class="text-gray-700 mb-4">Have questions? The town administration is here to help.</p>
-                <p class="text-gray-800 font-semibold">Town Administration Bad Belzig</p>
-                <p class="text-gray-600">Wittenberger Straße 6, 14806 Bad Belzig</p>
-                <p class="text-gray-600">Phone: +49 33841 940</p>
-                <p class="text-gray-600">Email: info@bad-belzig.de</p>
+        <section id="contact" class="py-16">
+            <h2 class="section-title">Get in <span class="accent-color">Touch</span></h2>
+            <div class="max-w-2xl mx-auto">
+                <form action="#" class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <input type="text" placeholder="Your Name" class="w-full p-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-yellow-500">
+                        <input type="email" placeholder="Your Email" class="w-full p-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-yellow-500">
+                    </div>
+                    <div>
+                        <input type="text" placeholder="Subject" class="w-full p-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-yellow-500">
+                    </div>
+                    <div>
+                        <textarea placeholder="Your Message" rows="5" class="w-full p-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-yellow-500"></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn">Send Message</button>
+                    </div>
+                </form>
             </div>
         </section>
 
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-8">
-        <div class="container mx-auto px-6 text-center">
+    <footer class="bg-gray-900 border-t border-gray-800 py-8">
+        <div class="container mx-auto px-6 text-center text-gray-400">
             <p>&copy; 2024 Town of Bad Belzig. All rights reserved.</p>
             <div class="flex justify-center space-x-4 mt-4">
-                <a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a>
-                <a href="#" class="text-gray-400 hover:text-white">Imprint</a>
+                <a href="#" class="hover:accent-color">Privacy Policy</a>
+                <a href="#" class="hover:accent-color">Imprint</a>
             </div>
         </div>
     </footer>
@@ -213,9 +210,25 @@
         // Mobile menu toggle
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
-
         mobileMenuButton.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
+        });
+
+        // Sticky header background change on scroll
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('bg-gray-900');
+            } else {
+                header.classList.remove('bg-gray-900');
+            }
+        });
+
+        // Close mobile menu when a link is clicked
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
         });
     </script>
 
